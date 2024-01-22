@@ -1,7 +1,24 @@
+
 .mainContainer {
     background-color:bisque;
     height: vh;
     border-left:  30px;
-    padding: 20px
-  
+    padding: 20px;
+
+}
+.js-animeContainer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    height: 700px
+}
+.js-favList {
+    color: bisque;
+}
+
+.movies {
+width: 100px;
+height: 100px;
+
+
 }
