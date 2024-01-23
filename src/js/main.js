@@ -4,14 +4,14 @@ const list = document.querySelector ('.js-list');
 const btnSearch = document.querySelector ('.js-btn');
 const animeContainer= document.querySelector ('.js-animeContainer')
 
-const url = 'https://api.jikan.moe/v4/anime?q=naruto'
+
 
 let animeList = [];
-function getDataApi () {
+function getDataApi (url) {
     fetch(url)
     .then((response)=> response.json())
     .then ((data)=> {
-        animeList = data.results;
+        animeList = data.data;
         console.log (data);
         renderAnimes (animeList);
     });
@@ -20,15 +20,17 @@ function getDataApi () {
 
 function renderAnimes (arrayanimes) {
     for (const animes of animeList){
-        animes.innerHTML +=  `<li> <h2 class=movies ${data.title}<h2> <img>${data.images}<img></li>`
+        animes.innerHTML +=  `<li> <h2 class=movies ${animes.title}<h2> <img>${animes.images.jpg.image_url}<img></li>`
     }
 }
 
-getDataApi ();
+
 
 function handleClick () {
-    const namesAnimes = animes.data
-    namesAnimes.innerHTML = `Title ${data.title}`;
+    const namesAnimes = list.value
+    console.log(namesAnimes);
+    const url = `https://api.ikan.moe/v4/anime?q=${namesAnime}`;
+    getDataApi (url);
 
 }
 
